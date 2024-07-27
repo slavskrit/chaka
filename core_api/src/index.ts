@@ -9,9 +9,11 @@ async function pushToQueue(key: string, value: string) {
 }
 
 async function main() {
-  await pushToQueue("my_queue", "item1");
-  await pushToQueue("my_queue", "item2");
-  await pushToQueue("my_queue", "item3");
+  let counter = 0;
+  setInterval(async () => {
+    counter++;
+    await pushToQueue("my_queue", `item${counter}`);
+  }, 1000);
 }
 
 main().catch((err) => console.error(err));
