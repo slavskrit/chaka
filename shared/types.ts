@@ -6,6 +6,13 @@ export interface AudioToProcess {
   text?: string;
 }
 
+export interface TextToImageProcess {
+  chatId: number;
+  messageId: number;
+  queryText: string;
+  imagePath?: string;
+}
+
 export interface TextToProcess {
   chatId: number;
   messageId: number;

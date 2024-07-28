@@ -23,6 +23,5 @@
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "noPropertyAccessFromIndexSignature": false
-  },
-  "include": ["../shared/", "index.ts", "logger.ts"]
+  }
 }

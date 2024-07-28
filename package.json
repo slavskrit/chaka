@@ -1,1 +1,0 @@
-{ "dependencies": { "@types/bull": "^4.10.0", "bull": "^4.15.1" } }

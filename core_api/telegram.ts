@@ -1,6 +1,6 @@
 import type { Message } from "node-telegram-bot-api";
 import TelegramBot from "node-telegram-bot-api";
-import { createTempDirectory } from "../../shared/utils";
+import { createTempDirectory } from "../shared/utils";
 import { Api } from "./api";
 import { logger } from "./logger";
 

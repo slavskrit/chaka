@@ -1,0 +1,14 @@
+{
+  "name": "sd_processor",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "winston": "^3.13.1"
+  }
+}

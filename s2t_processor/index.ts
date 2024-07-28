@@ -1,7 +1,7 @@
 import Queue from "bull";
 import { nodewhisper } from "nodejs-whisper";
-import { s2t_queue, s2t_queue_complete } from "../../shared/constants";
-import type { AudioToProcess } from "../../shared/types";
+import { s2t_queue, s2t_queue_complete } from "../shared/constants";
+import type { AudioToProcess } from "../shared/types";
 import { logger } from "./logger";
 
 const redisUrl = process.env.REDIS_URL || "redis://localhost:6379";
@@ -15,9 +15,7 @@ async function convertAudioToText(item: AudioToProcess) {
     autoDownloadModelName: "base.en",
   });
   const text = parseText(result);
-  logger.info("Text parsing is done, moving next");
   const obj = { ...item, text } as AudioToProcess;
-  logger.info("Text parsing is done, moving next" + JSON.stringify(obj));
   s2tQueueComplete.add(obj);
 }
 

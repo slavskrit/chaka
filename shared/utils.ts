@@ -1,7 +1,7 @@
 import fs from "fs";
 import os from "os";
 import path from "path";
-import { logger } from "../core_api/src/logger";
+import { logger } from "../core_api/logger";
 
 export function createTempDirectory(suffix: string) {
   const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), suffix));
