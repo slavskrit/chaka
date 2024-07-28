@@ -8,7 +8,10 @@
   "dependencies": {
     "@types/bull": "^4.10.0",
     "bull": "^4.15.1",
-    "ioredis": "^5.4.1"
+    "ioredis": "^5.4.1",
+    "nodejs-whisper": "^0.1.18",
+    "whisper-node": "^1.1.1",
+    "winston": "^3.13.1"
   },
   "devDependencies": {
     "@types/node": "^20.14.12"

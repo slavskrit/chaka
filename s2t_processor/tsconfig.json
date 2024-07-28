@@ -9,5 +9,5 @@
     "types": ["node"],
     "outDir": "dist"
   },
-  "include": ["src", "../shared/", "../core_api/src/logger.ts"]
+  "include": ["src", "../shared/"]
 }
