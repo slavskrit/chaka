@@ -6,6 +6,8 @@
     "start": "bun src/index.ts"
   },
   "dependencies": {
+    "@types/bull": "^4.10.0",
+    "bull": "^4.15.1",
     "ioredis": "^5.4.1"
   },
   "devDependencies": {
