@@ -30,6 +30,7 @@ function parseText(input: string): string {
 async function listenToQueue() {
   s2tQueue.process(async (job, done) => {
     const message = job.data as AudioToProcess;
+    logger.info(`Got new message to process ${message.messageId}`);
     await convertAudioToText(message);
 
     done();

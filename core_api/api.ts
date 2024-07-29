@@ -77,27 +77,30 @@ class Api {
       const textToImageProcess = job.data as TextToImageProcess;
       logger.info(`SD complete for the ${textToImageProcess.messageId}`);
 
-      const photo = "/Users/dp/Downloads/photo.jpg";
+      const photo = textToImageProcess.imagePath;
       const photoOptions: SendPhotoOptions = {
         caption: textToImageProcess.queryText,
       };
 
-      const updatedMessage = await this.bot.sendPhoto(
-        textToImageProcess.chatId,
-        photo,
-        photoOptions
-      );
-      this.bot.deleteMessage(
-        textToImageProcess.chatId,
-        textToImageProcess.messageId
-      );
-      this.bot.setMessageReaction(
-        updatedMessage.chat.id,
-        updatedMessage.message_id,
-        {
-          reaction: [{ type: "emoji", emoji: "🎉" }],
-        }
-      );
+      logger.info(`Photo path is ${photo}`);
+      if (photo) {
+        const updatedMessage = await this.bot.sendPhoto(
+          textToImageProcess.chatId,
+          photo,
+          photoOptions
+        );
+        this.bot.deleteMessage(
+          textToImageProcess.chatId,
+          textToImageProcess.messageId
+        );
+        this.bot.setMessageReaction(
+          updatedMessage.chat.id,
+          updatedMessage.message_id,
+          {
+            reaction: [{ type: "emoji", emoji: "🎉" }],
+          }
+        );
+      }
       done();
     });
   }
